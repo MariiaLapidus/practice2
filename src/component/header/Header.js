@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-function Header({funcSort, funcCity}) {
+import Count from "../count/Count";
+
+function Header({funcSort, funcCity,count }) {
     const sName = () => {
         funcSort()
     };
@@ -10,9 +12,14 @@ function Header({funcSort, funcCity}) {
         return (
             <nav className="navbar navbar-dark bg-primary">
                 <h1>Header</h1>
+
                 <a href="#" className="btn btn-primary" onClick={sName}>By name</a>
                 <a href="#" className="btn btn-primary" onClick={sCity}>By city</a>
-                <a href="#" className="btn btn-primary">Go somewhere</a>
+                <div className="count">Basket  <Count count={count} />
+                    {/*<h1>{this.props.count}</h1>*/}
+                </div>
+                {/*<Count count={count} />*/}
+                {/*<a href="#" className="btn btn-primary">Go somewhere</a>*/}
             </nav>
         );
     }
